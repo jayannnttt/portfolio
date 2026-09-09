@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm dark palette — intentionally warmer than cold tech defaults */
+  --color-bg: #0e0d0c;
+  --color-surface: #161412;
+  --color-surface-raised: #1e1b18;
+  --color-border: #2a2622;
+  --color-border-hover: #3d3830;
+
+  /* Text — warm off-white */
+  --color-text: #f0ece6;
+  --color-text-secondary: #a09890;
+  --color-text-muted: #6b6158;
+
+  /* Accent — amber/ochre. Rare in dev portfolios. */
+  --color-accent: #c8a96e;
+  --color-accent-hover: #d4b87e;
+  --color-accent-subtle: rgba(200, 169, 110, 0.08);
+  --color-accent-subtle-hover: rgba(200, 169, 110, 0.14);
+
+  /* Status indicators */
+  --color-status-completed: #7fbf7f;
+  --color-status-progress: #e8a44a;
+  --color-status-upcoming: #9b8ec4;
+
+  /* Typography */
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border-hover); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+/* ─── Serif utility ─── */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* ─── Focus ─── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Marquee / ticker ─── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* ─── Status pulse ─── */
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.5); }
+}
+.animate-status-pulse {
+  animation: status-pulse 2.4s ease-in-out infinite;
+}
