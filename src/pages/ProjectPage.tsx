@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import type { ProjectStatus } from '../data/projects';
 import ProjectPreviewPlaceholder from '../components/ProjectPreviewPlaceholder';
+import ProjectCarousel from '../components/ProjectCarousel';
 import AnimatedSection from '../components/AnimatedSection';
 
 const statusConfig: Record<
@@ -53,7 +54,8 @@ export default function ProjectPage() {
 
   const status = statusConfig[project.status];
   const nextProject = projects[(currentIndex + 1) % projects.length];
-  const hasScreenshots = project.screenshots && project.screenshots.length > 0;
+  const screenshots = project.screenshots || [];
+  const hasScreenshots = screenshots.length > 0;
 
   return (
     <article className="py-12 md:py-20 px-5 sm:px-6 md:px-8">
@@ -93,32 +95,8 @@ export default function ProjectPage() {
           </p>
         </AnimatedSection>
 
-        {/* Project Banner (Promotional / Hero visual) */}
-        {project.banner && (
-          <AnimatedSection delay={0.04} className="mb-12">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-accent uppercase tracking-wider">
-                  Project Banner
-                </span>
-                <span className="font-mono text-[11px] text-text-muted">
-                  Official Visual
-                </span>
-              </div>
-              <div className="border border-border rounded-sm overflow-hidden bg-surface shadow-xs">
-                <img
-                  src={project.banner}
-                  alt={`${project.name} Banner`}
-                  className="w-full h-auto object-cover block"
-                  loading="eager"
-                />
-              </div>
-            </div>
-          </AnimatedSection>
-        )}
-
         {/* Interface Screenshots / Schematic Area (Dedicated strictly to application interface) */}
-        <AnimatedSection delay={0.08} className="mb-14">
+        <AnimatedSection delay={0.04} className="mb-14">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs text-accent uppercase tracking-wider">
@@ -126,34 +104,17 @@ export default function ProjectPage() {
               </span>
               <span className="font-mono text-[11px] text-text-muted">
                 {hasScreenshots
-                  ? `${project.screenshots!.length} Captured View${project.screenshots!.length > 1 ? 's' : ''}`
+                  ? `${screenshots.length} Captured View${screenshots.length > 1 ? 's' : ''}`
                   : 'Architectural Wireframe'}
               </span>
             </div>
 
             {hasScreenshots ? (
-              /* Real Application Interface Screenshots Gallery */
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.screenshots!.map((src, idx) => (
-                  <div
-                    key={idx}
-                    className="group border border-border rounded-sm overflow-hidden bg-surface shadow-xs hover:border-accent/40 transition-colors"
-                  >
-                    <div className="border-b border-border bg-surface-raised/40 px-3.5 py-2 flex items-center justify-between">
-                      <span className="font-mono text-[10px] text-text-muted">
-                        {`${project.id}-interface-${String(idx + 1).padStart(2, '0')}.png`}
-                      </span>
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/60" />
-                    </div>
-                    <img
-                      src={src}
-                      alt={`${project.name} interface view ${idx + 1}`}
-                      className="w-full h-auto object-cover block"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
+              /* Instagram-Style Image Carousel */
+              <ProjectCarousel
+                screenshots={screenshots}
+                projectName={project.name}
+              />
             ) : (
               /* Wireframe / Schematic placeholder until screenshots are added */
               <div>

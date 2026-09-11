@@ -9,11 +9,13 @@ export interface Project {
   technologies: string[];
   github?: string;
   live?: string;
-  /** Promotional / hero banner — displayed at the top of the project detail page */
+  /** Promotional / hero banner — displayed on the project preview card */
   banner?: string;
   /** Real interface screenshots — displayed in the interface/screenshots section */
   screenshots?: string[];
 }
+
+import { fitflowScreenshots } from './fitflowScreenshots';
 
 export const projects: Project[] = [
   {
@@ -27,7 +29,7 @@ export const projects: Project[] = [
     ],
     technologies: ['Python', 'HTML', 'CSS'],
     banner: '/projects/fitflow-banner.png',
-    screenshots: [],
+    screenshots: fitflowScreenshots,
   },
   {
     id: 'ghosttraffic',

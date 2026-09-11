@@ -88,3 +88,11 @@ body {
 .animate-status-pulse {
   animation: status-pulse 2.4s ease-in-out infinite;
 }
+
+/* ─── High-Clarity Image Rendering ─── */
+.crisp-render {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
