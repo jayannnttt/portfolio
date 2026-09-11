@@ -8,9 +8,11 @@ export const fitflowScreenshots: string[] = [
   "/screenshots/fitflow/IMG3.png",
   "/screenshots/fitflow/IMG4.png",
   "/screenshots/fitflow/IMG5.png",
-  "/screenshots/fitflow/IM6.png",
-  "/screenshots/fitflow/IMG7.jpeg",
-  "/screenshots/fitflow/IMG8.png"
+  "/screenshots/fitflow/IMG6.png",
+  "/screenshots/fitflow/IMG7.png",
+  "/screenshots/fitflow/IMG8.png",
+  "/screenshots/fitflow/IMG9.jpeg",
+  "/screenshots/fitflow/IMG10.png"
 ];
 
 /**
