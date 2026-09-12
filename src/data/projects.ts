@@ -16,6 +16,7 @@ export interface Project {
 }
 
 import { fitflowScreenshots } from './fitflowScreenshots';
+import { ghosttrafficScreenshots } from './ghosttrafficScreenshots';
 
 export const projects: Project[] = [
   {
@@ -42,7 +43,7 @@ export const projects: Project[] = [
     ],
     technologies: ['Python', 'OpenCV', 'JavaScript', 'FastAPI'],
     banner: '/projects/ghosttraffic-banner.png',
-    // screenshots: ['/screenshots/ghosttraffic-telemetry.png'],
+    screenshots: ghosttrafficScreenshots,
   },
   {
     id: 'campus-query',
