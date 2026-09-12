@@ -33,11 +33,11 @@
 * Implemented systematic tracking mechanisms for workout sessions, set logging, and routine progression to reduce user friction.
 * Focused on responsive interface design and practical usability to support consistent daily training tracking.
 
-**GhostTraffic** | *Python, C*  
+**GhostTraffic** | *Python, OpenCV, JavaScript, FastAPI*  
 *Active Development*
-* Developing a network traffic analysis tool engineered for packet inspection, telemetry examination, and flow anomaly identification.
-* Implemented low-level data extraction and parsing algorithms to examine network behavior with precision and low resource overhead.
-* Solved data monitoring and flow-handling challenges to provide transparent, real-time diagnostic visibility into traffic patterns.
+* Developing a computer vision traffic analysis system engineered for vehicle tracking, speed estimation, and accident collision isolation.
+* Implemented multi-object tracking, trajectory reconstruction, and instantaneous velocity computation using OpenCV and NumPy.
+* Built an interactive forensic web interface providing clear visual playback and automated incident identification.
 
 ---
 
