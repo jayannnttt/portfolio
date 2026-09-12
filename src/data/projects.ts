@@ -101,5 +101,5 @@ export const professionalLinks: ProfessionalLinks = {
   linkedin: 'https://www.linkedin.com/in/s-jayant-54a002380/',
   email: 'jayannnttt.s@gmail.com',
   emailPlaceholder: 'jayannnttt.s@gmail.com',
-  resume: '',
+  resume: '/resume.html',
 };

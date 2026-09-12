@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S JAYANT — Resume (Web Development | PR & Management)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base Setup */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --primary-light: #eff6ff;
+      --accent-tech: #0284c7;
+      --accent-mgmt: #0d9488;
+      --border-subtle: #e2e8f0;
+      --border-light: #cbd5e1;
+      --bg-pill: #f1f5f9;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Space Grotesk', var(--font-body);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-main);
+      background-color: #f8fafc;
+      line-height: 1.35;
+      font-size: 11.5px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Screen UI toolbar (hidden when printing) */
+    .screen-toolbar {
+      background: #0f172a;
+      color: #fff;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .screen-toolbar .info {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .screen-toolbar .info span {
+      color: #93c5fd;
+    }
+
+    .btn-print {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease;
+    }
+
+    .btn-print:hover {
+      background: #1d4ed8;
+    }
+
+    /* Resume Document Wrapper (Strictly calibrated for 1 Page A4) */
+    .resume-page {
+      width: 210mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 12mm 14mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* Header Section */
+    .header {
+      border-bottom: 1.5px solid var(--border-subtle);
+      padding-bottom: 10px;
+      margin-bottom: 9px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 5px;
+    }
+
+    .candidate-name {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--primary-dark);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .candidate-subline {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 2px;
+    }
+
+    /* Dual Role Pill / Target Indicator */
+    .target-roles {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .role-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 9px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .role-badge.tech {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    .role-badge.mgmt {
+      background: #ccfbf1;
+      color: #0f766e;
+      border: 1px solid #99f6e4;
+    }
+
+    /* Contact & Links Bar */
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .contact-item a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+      color: var(--primary);
+    }
+
+    .dot-separator {
+      color: var(--border-light);
+    }
+
+    /* Candidate Statement / Profile Note */
+    .summary-box {
+      background: #f8fafc;
+      border-left: 3px solid var(--primary);
+      padding: 6px 10px;
+      margin-bottom: 10px;
+      font-size: 10.8px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .summary-box strong {
+      color: var(--text-main);
+    }
+
+    /* Layout Columns: 58% Technical Development | 42% PR & Management */
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 1.28fr 0.96fr;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .col-left, .col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Section Typography */
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--primary-dark);
+      padding-bottom: 3px;
+      border-bottom: 1.5px solid var(--border-subtle);
+      margin-bottom: 7px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title .accent-tag {
+      font-size: 9px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      letter-spacing: normal;
+      text-transform: none;
+      color: var(--text-light);
+    }
+
+    /* Entry Blocks */
+    .entry {
+      margin-bottom: 8px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .entry-org {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .entry-meta {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+
+    .tech-pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 3px;
+      margin-bottom: 4px;
+    }
+
+    .tech-pill {
+      font-size: 9.5px;
+      font-weight: 600;
+      background: var(--bg-pill);
+      color: var(--text-muted);
+      padding: 1px 6px;
+      border-radius: 3px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* Bullet Lists */
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 2px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+      font-size: 10.6px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      top: -1px;
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .bullet-list li strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Skills Box */
+    .skills-block {
+      background: #fafbfc;
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 7px 9px;
+      font-size: 10.5px;
+    }
+
+    .skills-row {
+      margin-bottom: 5px;
+      line-height: 1.35;
+    }
+
+    .skills-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-label {
+      font-weight: 700;
+      color: var(--text-main);
+      display: inline-block;
+      min-width: 82px;
+    }
+
+    .skills-value {
+      color: var(--text-muted);
+    }
+
+    /* Placeholder Highlighting for Customization */
+    .placeholder {
+      color: #b45309;
+      background: #fef3c7;
+      padding: 0 3px;
+      border-radius: 2px;
+      font-weight: 500;
+      font-size: 10px;
+    }
+
+    /* Print Specific Overrides */
+    @media print {
+      body {
+        background: none;
+        color: #000;
+      }
+
+      .screen-toolbar {
+        display: none !important;
+      }
+
+      .resume-page {
+        margin: 0 !important;
+        padding: 10mm 12mm !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: 297mm !important;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit !important;
+      }
+
+      .placeholder {
+        background: transparent;
+        color: #000;
+      }
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Helper Bar (Hidden on Print / PDF) -->
+  <div class="screen-toolbar">
+    <div class="info">
+      <strong>S JAYANT</strong> — Dual-Role College Club Resume (Web Development &amp; PR/Management) &nbsp;|&nbsp; <span>Optimized for Single-Page A4 / 10-15s Recruiter Scan</span>
+    </div>
+    <button class="btn-print" onclick="window.print()">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- Main 1-Page Resume Document -->
+  <div class="resume-page">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div>
+          <h1 class="candidate-name">S JAYANT</h1>
+          <div class="candidate-subline">2nd Year B.Tech — Computer Science &amp; Engineering (AI &amp; ML)</div>
+        </div>
+        <div class="target-roles">
+          <span class="role-badge tech">Web Development</span>
+          <span class="role-badge mgmt">PR &amp; Management</span>
+        </div>
+      </div>
+
+      <div class="contact-bar">
+        <span class="contact-item">
+          <strong>Email:</strong> <a href="mailto:jayannnttt.s@gmail.com">jayannnttt.s@gmail.com</a>
+        </span>
+        <span class="dot-separator">•</span>
+        <span class="contact-item">
+          <strong>Phone:</strong> <a href="tel:+919476005621">+91 9476005621</a>
+        </span>
+        <span class="dot-separator">•</span>
+        <span class="contact-item">
+          <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/s-jayant-54a002380" target="_blank">linkedin.com/in/s-jayant-54a002380</a>
+        </span>
+        <span class="dot-separator">•</span>
+        <span class="contact-item">
+          <strong>GitHub:</strong> <a href="https://github.com/jayannnttt" target="_blank">github.com/jayannnttt</a>
+        </span>
+        <span class="dot-separator">•</span>
+        <span class="contact-item">
+          <strong>Portfolio:</strong> <a href="https://portfolio-eight-psi-ug1txgk5k6.vercel.app/" target="_blank">portfolio-eight-psi...vercel.app</a>
+        </span>
+      </div>
+    </header>
+
+    <!-- Candidate Profile / Value Proposition -->
+    <div class="summary-box">
+      <strong>Club Profile Summary:</strong> Versatile 2nd-year CSE (AI/ML) undergraduate offering an effective blend of <strong>technical development ability</strong> and <strong>proven student leadership</strong>. Brings 9 months of active developer experience at Synergy Club and end-to-end software building (FitFloww, GhostTraffic), combined with two consecutive years as School Head Boy and Student of the Year. Seeking to deliver high-ownership technical contributions in <strong>Web Development</strong> and coordinate impactful outreach, team collaboration, and operations in <strong>PR &amp; Management</strong>.
+    </div>
+
+    <!-- Dual Discipline Body Grid -->
+    <div class="resume-grid">
+
+      <!-- Left Column: Technical & Web Development Domain -->
+      <div class="col-left">
+
+        <!-- Technical Experience -->
+        <section>
+          <h2 class="section-title">
+            Technical Experience
+            <span class="accent-tag">Development Domain</span>
+          </h2>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">Developer</span>
+              <span class="entry-meta">9 Months</span>
+            </div>
+            <div class="entry-org">Synergy Club</div>
+            <ul class="bullet-list">
+              <li>Worked as an active developer in the team for 9 months, collaborating on software and digital development tasks.</li>
+              <li>Contributed to team problem-solving and technical implementation, coordinating closely with peers to meet project milestones.</li>
+              <li>Maintained dependable coding standards, participated in team workflows, and assisted in building functional project solutions.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Development Projects -->
+        <section>
+          <h2 class="section-title">
+            Development Projects
+            <span class="accent-tag">Hands-on Implementation</span>
+          </h2>
+
+          <!-- FitFloww -->
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">FitFloww — Fitness Tracking Application</span>
+              <span class="entry-meta"><span class="placeholder">[Completed / Live]</span></span>
+            </div>
+            <div class="tech-pill-list">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">HTML</span>
+              <span class="tech-pill">CSS</span>
+              <span class="tech-pill"><span class="placeholder">[ADD ADDITIONAL TECH]</span></span>
+            </div>
+            <ul class="bullet-list">
+              <li>Built and deployed a fitness tracking application designed to help users systematically monitor and manage their workout routines.</li>
+              <li>Engineered intuitive logging and tracking mechanisms to eliminate friction in routine tracking and session progression.</li>
+              <li>Focused on clean, responsive interface design and practical usability to support consistent day-to-day user engagement.</li>
+            </ul>
+          </div>
+
+          <!-- GhostTraffic -->
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">GhostTraffic — Network Traffic Analysis Tool</span>
+              <span class="entry-meta"><span class="placeholder">[In Progress / Active Dev]</span></span>
+            </div>
+            <div class="tech-pill-list">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">C</span>
+              <span class="tech-pill"><span class="placeholder">[ADD ADDITIONAL TECH]</span></span>
+            </div>
+            <ul class="bullet-list">
+              <li>Developing a specialized network analysis tool engineered for traffic inspection, telemetry examination, and anomaly identification.</li>
+              <li>Implemented low-level data and packet handling logic, addressing analytical and performance challenges with precision.</li>
+              <li>Built a structured framework to interpret network flows and surface clear, reliable diagnostic data.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Technical Skillset -->
+        <section>
+          <h2 class="section-title">
+            Technical Skills
+            <span class="accent-tag">Web &amp; Core</span>
+          </h2>
+          <div class="skills-block">
+            <div class="skills-row">
+              <span class="skills-label">Languages:</span>
+              <span class="skills-value">Python, HTML5, CSS3, C, C++, <span class="placeholder">[ADD JAVASCRIPT / TYPESCRIPT]</span></span>
+            </div>
+            <div class="skills-row">
+              <span class="skills-label">Web Dev &amp; Tools:</span>
+              <span class="skills-value">Git, GitHub, Responsive Web Design, Vite, VS Code, <span class="placeholder">[ADD REACT / FRAMEWORKS]</span></span>
+            </div>
+            <div class="skills-row">
+              <span class="skills-label">Competencies:</span>
+              <span class="skills-value">Frontend Layouts, UI Structuring, Problem Solving, Code Collaboration</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column: PR & Management & Leadership Domain -->
+      <div class="col-right">
+
+        <!-- Leadership & PR / Management -->
+        <section>
+          <h2 class="section-title">
+            Leadership &amp; Achievements
+            <span class="accent-tag">PR &amp; Management Focus</span>
+          </h2>
+
+          <!-- Head Boy -->
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">Head Boy (Two Consecutive Years)</span>
+              <span class="entry-meta">2-Year Tenure</span>
+            </div>
+            <div class="entry-org">St. Xavier Senior Secondary School</div>
+            <ul class="bullet-list">
+              <li><strong>Student Body Leadership:</strong> Appointed and trusted to lead the student body for two full years, acting as the primary liaison between students, teachers, and school management.</li>
+              <li><strong>Team &amp; Event Coordination:</strong> Led student councils and event volunteer teams in organizing school programs, daily assemblies, and campus-wide activities with structured planning.</li>
+              <li><strong>Public Communication &amp; PR:</strong> Regularly addressed school gatherings, represented the institution in public forums, and communicated decisions clearly across student cohorts.</li>
+              <li><strong>Responsibility &amp; People Management:</strong> Managed student responsibilities, resolved interpersonal conflicts, and took active initiative in upholding institutional values and teamwork.</li>
+            </ul>
+          </div>
+
+          <!-- Student of the Year -->
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">Student of the Year Award</span>
+              <span class="entry-meta">Honorary Award</span>
+            </div>
+            <div class="entry-org">St. Xavier Senior Secondary School</div>
+            <ul class="bullet-list">
+              <li>Conferred the school's top individual recognition for overall excellence, proven reliability, leadership impact, and academic commitment.</li>
+              <li>Demonstrated exceptional balance between academic dedication, student representation, and active participation in school initiatives.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- PR & Management Competencies -->
+        <section>
+          <h2 class="section-title">
+            PR &amp; Management Skills
+            <span class="accent-tag">Club Capabilities</span>
+          </h2>
+          <div class="skills-block">
+            <div class="skills-row">
+              <span class="skills-label">Communication:</span>
+              <span class="skills-value">Public Speaking, Outreach, Clear Interpersonal &amp; Written Communication</span>
+            </div>
+            <div class="skills-row">
+              <span class="skills-label">Management:</span>
+              <span class="skills-value">Team Coordination, Event Logistics, Task Delegation, Conflict Mediation</span>
+            </div>
+            <div class="skills-row">
+              <span class="skills-label">Core Traits:</span>
+              <span class="skills-value">Ownership Mindset, Adaptability, High Initiative, Reliability under Deadlines</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+          <h2 class="section-title">
+            Education
+          </h2>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">SRM Institute of Science &amp; Technology</span>
+              <span class="entry-meta">2024 — Present</span>
+            </div>
+            <div class="entry-org">B.Tech — CSE (AI &amp; ML)</div>
+            <div style="font-size: 10.5px; color: var(--text-muted); margin-top: 2px;">
+              Currently in <strong>2nd Year</strong> | Chennai, Tamil Nadu
+            </div>
+          </div>
+
+          <div class="entry" style="margin-top: 6px;">
+            <div class="entry-header">
+              <span class="entry-title">St. Xavier Sr. Sec. School</span>
+              <span class="entry-meta">Completed</span>
+            </div>
+            <div class="entry-org">Higher Secondary Education</div>
+            <div style="font-size: 10.5px; color: var(--text-muted); margin-top: 2px;">
+              Andaman &amp; Nicobar Islands
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
