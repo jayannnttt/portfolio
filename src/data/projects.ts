@@ -41,6 +41,7 @@ export const projects: Project[] = [
       'Engineered for network flow inspection, packet telemetry examination, and anomaly identification.',
     ],
     technologies: ['Python', 'C'],
+    banner: '/projects/ghosttraffic-banner.png',
     // screenshots: ['/screenshots/ghosttraffic-telemetry.png'],
   },
   {

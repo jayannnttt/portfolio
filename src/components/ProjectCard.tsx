@@ -127,7 +127,7 @@ export default function ProjectCard({
                   to={`/project/${project.id}`}
                   className="text-sm font-medium text-text-secondary group-hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
                 >
-                  <span>View Details</span>
+                  <span>View Project</span>
                   <span className="text-sm transition-transform duration-200 group-hover:translate-x-1">
                     &rarr;
                   </span>
@@ -160,20 +160,17 @@ export default function ProjectCard({
     return (
       <div className="h-full">
         <div className="group h-full border border-dashed border-border/80 hover:border-status-upcoming/60 bg-surface/40 hover:bg-surface/60 rounded-sm overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xs">
-          {/* Project Preview Thumbnail / Banner */}
+          {/* Project Preview Thumbnail / Banner — No link for concept */}
           <div className="border-b border-dashed border-border/70 bg-[#131114] overflow-hidden">
             {project.banner ? (
-              <Link
-                to={`/project/${project.id}`}
-                className="block relative aspect-[21/9] overflow-hidden"
-              >
+              <div className="block relative aspect-[21/9] overflow-hidden">
                 <img
                   src={project.banner}
                   alt={`${project.name} Banner`}
-                  className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-300 ease-out crisp-render"
+                  className="w-full h-full object-cover object-center crisp-render"
                   loading="lazy"
                 />
-              </Link>
+              </div>
             ) : (
               <ProjectPreviewPlaceholder
                 projectName={project.name}
@@ -225,17 +222,12 @@ export default function ProjectCard({
               </div>
             </div>
 
-            {/* Bottom Actions */}
+            {/* Bottom Actions — Removed View Details link for Campus Query */}
             <div className="mt-auto pt-4 border-t border-dashed border-border/70 flex items-center justify-between">
-              <Link
-                to={`/project/${project.id}`}
-                className="text-sm font-medium text-text-muted group-hover:text-text transition-colors duration-200 inline-flex items-center gap-2"
-              >
-                <span>Concept Brief</span>
-                <span className="text-sm transition-transform duration-200 group-hover:translate-x-1">
-                  &rarr;
-                </span>
-              </Link>
+              <span className="font-mono text-xs text-text-muted/80 inline-flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-status-upcoming/70" />
+                <span>Concept Stage</span>
+              </span>
               <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted/60">
                 In Conception
               </span>
@@ -325,7 +317,7 @@ export default function ProjectCard({
               to={`/project/${project.id}`}
               className="text-sm font-medium text-text-secondary group-hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
             >
-              <span>View Details</span>
+              <span>View Project</span>
               <span className="text-sm transition-transform duration-200 group-hover:translate-x-1">
                 &rarr;
               </span>
