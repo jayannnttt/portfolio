@@ -54,6 +54,7 @@ export const projects: Project[] = [
       'Exploratory retrieval-augmented architecture referencing academic schedules, institutional regulations, and student guidance.',
     ],
     technologies: ['Python'],
+    banner: '/projects/campus-query-banner.png',
     // screenshots: ['/screenshots/campus-query-concept.png'],
   },
 ];
