@@ -52,13 +52,14 @@ export default function ProjectCard({
           {project.banner ? (
             <Link
               to={`/project/${project.id}`}
-              className="block relative w-full aspect-[21/9] sm:aspect-[2.4/1] overflow-hidden group/img"
+              className="block relative w-full aspect-[2.5/1] overflow-hidden group/img"
             >
               <img
                 src={project.banner}
                 alt={`${project.name} Banner`}
                 className="w-full h-full object-cover object-center transition-all duration-300 group-hover/img:scale-[1.01] crisp-render"
                 loading="eager"
+                decoding="async"
               />
             </Link>
           ) : (
@@ -163,12 +164,13 @@ export default function ProjectCard({
           {/* Project Preview Thumbnail / Banner — No link for concept */}
           <div className="border-b border-dashed border-border/70 bg-[#131114] overflow-hidden">
             {project.banner ? (
-              <div className="block relative aspect-[21/9] overflow-hidden">
+              <div className="block relative aspect-[2.5/1] overflow-hidden">
                 <img
                   src={project.banner}
                   alt={`${project.name} Banner`}
                   className="w-full h-full object-cover object-center crisp-render"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ) : (
@@ -247,13 +249,14 @@ export default function ProjectCard({
           {project.banner ? (
             <Link
               to={`/project/${project.id}`}
-              className="block relative aspect-[21/9] overflow-hidden"
+              className="block relative aspect-[2.5/1] overflow-hidden group/img"
             >
               <img
                 src={project.banner}
                 alt={`${project.name} Banner`}
-                className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-300 ease-out crisp-render"
-                loading="lazy"
+                className="w-full h-full object-cover object-center group-hover/img:scale-[1.01] transition-transform duration-300 ease-out crisp-render"
+                loading="eager"
+                decoding="async"
               />
             </Link>
           ) : (
