@@ -1,6 +1,8 @@
 # S JAYANT
 +91 9476005621 | [jayannnttt.s@gmail.com](mailto:jayannnttt.s@gmail.com) | [LinkedIn](https://www.linkedin.com/in/s-jayant-54a002380/) | [GitHub](https://github.com/jayannnttt) | [Portfolio](https://portfolio-eight-psi-ug1txgk5k6.vercel.app/)
 
+2nd-year CSE (AI/ML) student with 9 months of developer experience at Synergy and 2 years of student leadership as School Head Boy. Eager to contribute hands-on web development for club portals and technical initiatives, while providing dependable coordination for event operations and PR outreach.
+
 ---
 
 ## EDUCATION
@@ -43,10 +45,8 @@
 
 **Head Boy (Two Consecutive Years)** &mdash; St. Xavier Senior Secondary School  
 *Andaman & Nicobar Islands* | 2-Year Tenure
-* Elected and entrusted to lead the student council across two consecutive academic years, serving as the primary liaison between students, faculty, and administration.
-* Directed student volunteer committees to coordinate school events, annual functions, assemblies, and inter-house activities.
-* Delivered formal addresses to school gatherings, represented the institution in public forums, and maintained transparent communication across student cohorts.
-* Exercised responsible people management, resolved peer conflicts, and took active initiative to uphold discipline and team morale.
+* Led the student council for two consecutive years, acting as the primary liaison between students, faculty, and school administration.
+* Coordinated student volunteer teams and logistics for annual school functions, assemblies, and cultural events.
 
 **Student of the Year Award** &mdash; St. Xavier Senior Secondary School  
 *Andaman & Nicobar Islands* | Honorary Distinction
