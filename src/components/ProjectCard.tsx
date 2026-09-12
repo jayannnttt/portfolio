@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Project, ProjectStatus } from '../data/projects';
 import ProjectPreviewPlaceholder from './ProjectPreviewPlaceholder';
@@ -42,6 +43,10 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const status = statusConfig[project.status];
   const indexLabel = String(index + 1).padStart(2, '0');
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const screenshots = project.screenshots || [];
+  const hasScreenshots = screenshots.length > 0;
+  const currentImage = hasScreenshots ? screenshots[activeImageIndex] : project.banner;
 
   // ─── Flagship / Featured Card (FitFlow) ───
   if (variant === 'featured') {
@@ -242,20 +247,87 @@ export default function ProjectCard({
   return (
     <div className="h-full">
       <div className="group h-full border border-border hover:border-status-progress/60 bg-surface rounded-sm overflow-hidden transition-all duration-300 flex flex-col shadow-xs hover:shadow-md">
-        {/* Project Preview Thumbnail / Banner */}
-        <div className="border-b border-border bg-[#141210] overflow-hidden">
-          {project.banner ? (
-            <Link
-              to={`/project/${project.id}`}
-              className="block relative aspect-[21/9] overflow-hidden"
-            >
-              <img
-                src={project.banner}
-                alt={`${project.name} Banner`}
-                className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-300 ease-out crisp-render"
-                loading="lazy"
-              />
-            </Link>
+        {/* Project Preview Thumbnail / Interactive Screenshot Showcase */}
+        <div className="border-b border-border bg-[#0e0c0a] overflow-hidden relative group/img">
+          {currentImage ? (
+            <div className="relative aspect-[21/9] sm:aspect-[16/9] overflow-hidden bg-[#0a0908] flex items-center justify-center">
+              <Link
+                to={`/project/${project.id}`}
+                className="block w-full h-full"
+                title={`${project.name} — View details`}
+              >
+                <img
+                  key={currentImage}
+                  src={currentImage}
+                  alt={`${project.name} preview ${hasScreenshots ? activeImageIndex + 1 : ''}`}
+                  className="w-full h-full object-contain object-center transition-all duration-300 crisp-render p-1.5 group-hover/img:scale-[1.01]"
+                  loading="lazy"
+                />
+              </Link>
+
+              {/* Prev / Next controls if multiple screenshots */}
+              {hasScreenshots && screenshots.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setActiveImageIndex((prev) =>
+                        prev === 0 ? screenshots.length - 1 : prev - 1
+                      );
+                    }}
+                    aria-label="Previous screenshot"
+                    title="Previous screenshot"
+                    className="absolute left-2.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/80 hover:bg-black text-text border border-white/15 hover:border-accent/60 flex items-center justify-center text-xs transition-all z-10 cursor-pointer shadow-md opacity-85 group-hover/img:opacity-100"
+                  >
+                    &larr;
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setActiveImageIndex((prev) =>
+                        (prev + 1) % screenshots.length
+                      );
+                    }}
+                    aria-label="Next screenshot"
+                    title="Next screenshot"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/80 hover:bg-black text-text border border-white/15 hover:border-accent/60 flex items-center justify-center text-xs transition-all z-10 cursor-pointer shadow-md opacity-85 group-hover/img:opacity-100"
+                  >
+                    &rarr;
+                  </button>
+
+                  {/* Counter badge */}
+                  <div className="absolute top-2.5 right-2.5 font-mono text-[10px] text-accent px-2 py-0.5 rounded bg-black/85 border border-accent/30 backdrop-blur-xs z-10 select-none pointer-events-none">
+                    {activeImageIndex + 1} / {screenshots.length}
+                  </div>
+
+                  {/* Dot Indicators */}
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 z-10 bg-black/65 px-2 py-0.5 rounded-full backdrop-blur-xs">
+                    {screenshots.map((_, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setActiveImageIndex(idx);
+                        }}
+                        aria-label={`Show screenshot ${idx + 1}`}
+                        className={`transition-all duration-200 rounded-full cursor-pointer ${
+                          idx === activeImageIndex
+                            ? 'w-3 h-1 bg-accent'
+                            : 'w-1 h-1 bg-white/40 hover:bg-white/80'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
           ) : (
             <ProjectPreviewPlaceholder
               projectName={project.name}
