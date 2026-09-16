@@ -1,60 +1,61 @@
 # S JAYANT
 +91 9476005621 | [jayannnttt.s@gmail.com](mailto:jayannnttt.s@gmail.com) | [LinkedIn](https://www.linkedin.com/in/s-jayant-54a002380/) | [GitHub](https://github.com/jayannnttt) | [Portfolio](https://portfolio-eight-psi-ug1txgk5k6.vercel.app/)
 
-2nd-year CSE (AI/ML) student with 9 months of developer experience at Synergy and 2 years of student leadership as School Head Boy. Eager to contribute hands-on web development for club portals and technical initiatives, while providing dependable coordination for event operations and PR outreach.
+**Technical Profile:** 2nd-year CSE (AI/ML) undergraduate with 9 months of active developer experience at Synergy Club. Proven track record of architecting software solutions—including computer vision traffic forensic engines, full-stack fitness applications, and AI retrieval systems. Combines strong core fundamentals in Python, C++, and Systems/Web engineering with proven student leadership as Head Boy. Primed to deliver rapid, high-reliability software development for club technical initiatives and competitive hackathons.
+
+---
+
+## TECHNICAL ARSENAL & CORE COMPETENCIES
+
+* **Languages:** Python, C++, C, JavaScript (ES6+), HTML5, CSS3, SQL (Foundational)
+* **Frameworks & Libraries:** OpenCV, FastAPI, Flask, NumPy, Vite, Responsive Web Frameworks
+* **Developer Tools & OS:** Git, GitHub, VS Code, Postman, Linux CLI / Bash, Windows PowerShell
+* **CS Concepts & Architecture:** Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP), Computer Vision, RESTful APIs, Asynchronous Execution, Debugging & Performance Profiling
+
+---
+
+## TECHNICAL EXPERIENCE
+
+**Synergy Club** &mdash; Student Organization  
+*Developer [Developing Domain • Technical Team]* | Duration: 9 Months (Sep 2025 – May 2026)
+* Operated as an active software developer on the technical team, contributing clean, modular code to club projects and internal utilities.
+* Participated in peer code reviews, Git/GitHub branch workflows, and coordinated sprint cycles to deliver tested features under strict project milestones.
+* Diagnosed and debugged cross-environment runtime issues, optimized client/server communication logic, and collaborated with fellow engineers to maintain code quality standards.
+
+---
+
+## ENGINEERING PROJECTS
+
+**GhostTraffic** | *Python, OpenCV, FastAPI, NumPy, JavaScript*  
+*Active Development • In Progress*
+* **Computer Vision Forensic System:** Engineering an automated computer vision engine designed to ingest road CCTV footage, track multi-vehicle vectors, and detect sudden accident collisions in real-time.
+* **Trajectory & Kinematics Calculation:** Built algorithmic modules utilizing OpenCV contour extraction, optical flow, and coordinate calculus to reconstruct vehicular trajectories and calculate instantaneous velocity differentials.
+* **Web Forensics Dashboard:** Integrated an asynchronous FastAPI backend with an interactive web UI for temporal timeline scrubbing, frame extraction, and automated incident anomaly reporting.
+
+**FitFlow** | *Python, JavaScript, HTML5, CSS3*  
+*Live Application*
+* **Workout Progression Engine:** Architected and shipped an intuitive workout tracking platform that records exercise volume, calculates progressive overload routines, and eliminates user friction during high-intensity training.
+* **Interactive UI & State Architecture:** Implemented modular front-end components and reliable state handling for instantaneous set logging, dynamic metric updates, and responsive multi-device usability.
+
+**Campus Query** | *Python, RAG Architecture, NLP, Vector Retrieval*  
+*Technical Concept & Prototype*
+* **RAG Academic Knowledge Assistant:** Designing a Retrieval-Augmented Generation assistant to index institutional regulations, syllabus documents, and exam schedules for low-latency question-answering.
+* **Context Retrieval Pipeline:** Prototyping document chunking and semantic vector similarity search pipelines in Python to eliminate hallucinations and deliver verified campus guidance to students.
 
 ---
 
 ## EDUCATION
 
 **SRM Institute of Science and Technology** &mdash; Chennai, India  
-*B.Tech in Computer Science and Engineering (Artificial Intelligence & Machine Learning) &mdash; 2nd Year* | 2024 &ndash; Present
+*B.Tech in Computer Science and Engineering (AI & Machine Learning) — 2nd Year* | 2024 &ndash; 2028 (Expected)  
+* Relevant Coursework: Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP in C++ & Python), Operating Systems, Discrete Mathematics, Database Systems.
 
 **St. Xavier Senior Secondary School** &mdash; Andaman & Nicobar Islands  
-*All India Senior School Certificate Examination (AISSCE)* | Completed
+*All India Senior School Certificate Examination (AISSCE) — CBSE* | Graduated
 
 ---
 
-## EXPERIENCE
+## HONORS & CAMPUS DISTINCTIONS
 
-**Synergy** &mdash; Student Organization  
-*Developer* | Duration: 9 Months
-* Collaborated as an active developer in the technical team, contributing to software deliverables and code implementations.
-* Engaged in collaborative problem-solving, code reviews, and cross-member coordination to fulfill technical requirements.
-* Maintained structured code practices and assisted peers in debugging, feature development, and project milestones.
-
----
-
-## PROJECTS
-
-**FitFloww** | *Python, HTML, CSS*  
-*Live Application*
-* Engineered and built a dedicated workout tracking application designed to help users monitor and manage exercise routines.
-* Implemented systematic tracking mechanisms for workout sessions, set logging, and routine progression to reduce user friction.
-* Focused on responsive interface design and practical usability to support consistent daily training tracking.
-
-**GhostTraffic** | *Python, OpenCV, JavaScript, FastAPI*  
-*Active Development*
-* Developing a computer vision traffic analysis system engineered for vehicle tracking, speed estimation, and accident collision isolation.
-* Implemented multi-object tracking, trajectory reconstruction, and instantaneous velocity computation using OpenCV and NumPy.
-* Built an interactive forensic web interface providing clear visual playback and automated incident identification.
-
----
-
-## LEADERSHIP & ACHIEVEMENTS
-
-**Head Boy (Two Consecutive Years)** &mdash; St. Xavier Senior Secondary School  
-*Andaman & Nicobar Islands* | 2-Year Tenure
-* Led the student council for two consecutive years, acting as the primary liaison between students, faculty, and school administration.
-* Coordinated student volunteer teams and logistics for annual school functions, assemblies, and cultural events.
-
-**Student of the Year Award** &mdash; St. Xavier Senior Secondary School  
-*Andaman & Nicobar Islands* | Honorary Distinction
-* Conferred the institution's highest student honor in recognition of all-round excellence across academic dedication, leadership responsibility, and extracurricular contribution.
-
----
-
-## SKILLS & COMPETENCIES
-
-* **Programming & Web Development:** Python, C, C++, HTML5, CSS3, JavaScript, Git, GitHub, Vite, VS Code, Responsive Design
-* **PR, Leadership & Management:** Public Relations & Outreach, Team Coordination, Event Logistics, Public Speaking, Conflict Resolution, Delegation, People Management
+* **School Head Boy (Two Consecutive Years):** Elected for 2 back-to-back tenures to head the student council at St. Xavier Sr. Sec. School; represented the student body across institution-wide operations and official summits.
+* **Student of the Year Award:** Conferred the institution's highest student distinction in recognition of combined academic dedication, discipline, and exemplary campus representation.
