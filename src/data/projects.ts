@@ -16,6 +16,7 @@ export interface Project {
 }
 
 import { fitflowScreenshots } from './fitflowScreenshots';
+import { devhubScreenshots } from './devhubScreenshots';
 import { ghosttrafficScreenshots } from './ghosttrafficScreenshots';
 
 export const projects: Project[] = [
@@ -31,6 +32,19 @@ export const projects: Project[] = [
     technologies: ['Python', 'HTML', 'CSS'],
     banner: '/projects/fitflow-banner.png',
     screenshots: fitflowScreenshots,
+  },
+  {
+    id: 'devhub',
+    name: 'DevHub',
+    status: 'completed',
+    tagline: 'A home for developers — discover repositories and connect in open source',
+    description: [
+      'DevHub is a developer platform designed to help programmers discover trending repositories, connect with creators, and stay ahead in open source.',
+      'Features repository exploration, developer profiles, technology curation, and community insights.',
+    ],
+    technologies: ['React', 'TypeScript', 'Node.js', 'Tailwind CSS'],
+    banner: '/projects/devhub-banner.png',
+    screenshots: devhubScreenshots,
   },
   {
     id: 'ghosttraffic',

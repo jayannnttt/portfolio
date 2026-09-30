@@ -76,7 +76,7 @@ export default function ProjectCard({
           {/* Header meta */}
           <div className="flex items-center justify-between mb-5">
             <span className="font-mono text-xs text-accent tracking-wider font-medium">
-              FLAGSHIP &mdash; {indexLabel}
+              {index === 0 ? 'FLAGSHIP' : 'FEATURED'} &mdash; {indexLabel}
             </span>
             <span
               className={`inline-flex items-center gap-1.5 font-mono text-[11px] px-2.5 py-1 rounded-full border ${status.badgeBg} ${status.textColor}`}
