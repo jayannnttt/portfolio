@@ -37,7 +37,7 @@
 * **Workout Progression Engine:** Architected and shipped an intuitive workout tracking platform that records exercise volume, calculates progressive overload routines, and eliminates user friction during high-intensity training.
 * **Interactive UI & State Architecture:** Implemented modular front-end components and reliable state handling for instantaneous set logging, dynamic metric updates, and responsive multi-device usability.
 
-**Campus Query** | *Python, RAG Architecture, NLP, Vector Retrieval*  
+**Campus Quer** | *Python, RAG Architecture, NLP, Vector Retrieval*  
 *Technical Concept & Prototype*
 * **RAG Academic Knowledge Assistant:** Designing a Retrieval-Augmented Generation assistant to index institutional regulations, syllabus documents, and exam schedules for low-latency question-answering.
 * **Context Retrieval Pipeline:** Prototyping document chunking and semantic vector similarity search pipelines in Python to eliminate hallucinations and deliver verified campus guidance to students.

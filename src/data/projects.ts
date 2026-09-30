@@ -46,12 +46,12 @@ export const projects: Project[] = [
     screenshots: ghosttrafficScreenshots,
   },
   {
-    id: 'campus-query',
-    name: 'Campus Query',
+    id: 'campus-quer',
+    name: 'Campus Quer',
     status: 'upcoming',
     tagline: 'RAG-based campus chatbot',
     description: [
-      'Campus Query will be a RAG-based chatbot designed to handle campus-related queries, providing students with quick and accurate answers.',
+      'Campus Quer will be a RAG-based chatbot designed to handle campus-related queries, providing students with quick and accurate answers.',
       'Exploratory retrieval-augmented architecture referencing academic schedules, institutional regulations, and student guidance.',
     ],
     technologies: ['Python'],

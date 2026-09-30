@@ -5,31 +5,26 @@ const skillData = [
     name: 'HTML',
     index: '01',
     note: 'Structure, semantic markup, and accessible document tree',
-    usage: 'FitFlow Web Interface',
   },
   {
     name: 'CSS',
     index: '02',
     note: 'Visual styling, layout systems, and responsive design',
-    usage: 'FitFlow & Portfolio',
   },
   {
     name: 'Python',
     index: '03',
     note: 'Backend scripting, algorithmic data processing, and APIs',
-    usage: 'FitFlow, GhostTraffic, Campus Query',
   },
   {
     name: 'C',
     index: '04',
     note: 'Low-level systems programming and memory-conscious routines',
-    usage: 'GhostTraffic Network Engine',
   },
   {
     name: 'C++',
     index: '05',
     note: 'Object-oriented architecture and performance-critical computing',
-    usage: 'Core Problem Solving',
   },
 ] as const;
 
@@ -61,7 +56,7 @@ export default function Skills() {
         <div className="divide-y divide-border border-b border-border">
           {skillData.map((skill, i) => (
             <AnimatedSection key={skill.name} delay={i * 0.05}>
-              <div className="grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-6 md:gap-x-10 items-baseline py-6 sm:py-7 group hover:bg-surface/50 px-2 sm:px-4 -mx-2 sm:-mx-4 rounded-xs transition-colors duration-150">
+              <div className="grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr] gap-x-6 md:gap-x-10 items-baseline py-6 sm:py-7 group hover:bg-surface/50 px-2 sm:px-4 -mx-2 sm:-mx-4 rounded-xs transition-colors duration-150">
                 {/* Index */}
                 <span className="font-mono text-xs text-text-muted group-hover:text-accent transition-colors self-center">
                   {skill.index}
@@ -76,11 +71,6 @@ export default function Skills() {
                     {skill.note}
                   </span>
                 </div>
-
-                {/* Project Usage Badge */}
-                <span className="hidden sm:inline-flex items-center font-mono text-xs text-text-muted/80 bg-bg border border-border px-3 py-1 rounded-sm self-center">
-                  {skill.usage}
-                </span>
               </div>
             </AnimatedSection>
           ))}

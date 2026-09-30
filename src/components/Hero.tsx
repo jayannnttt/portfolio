@@ -18,7 +18,7 @@ const statusLabels: Record<string, string> = {
 const tickerItems = [
   'FitFlow',
   'GhostTraffic',
-  'Campus Query',
+  'Campus Quer',
   'Python',
   'C',
   'C++',
@@ -26,7 +26,7 @@ const tickerItems = [
   'CSS',
   'FitFlow',
   'GhostTraffic',
-  'Campus Query',
+  'Campus Quer',
   'Python',
   'C',
   'C++',
